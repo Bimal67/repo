@@ -1,0 +1,19 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Reddit Sans", sans-serif;
+    scroll-behavior:smooth;
+    transition:0.5s ease-in-out;
+}
+
+::selection {
+    background: #ffecbc;
+    color:black
+}
+
+tr:nth-child(odd) {
+    background: #ffecbc;
+}

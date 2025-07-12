@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\web\\tourly\\tourly\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|e:\\web\\tourly\\tourly\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|e:\\web\\tourly\\tourly\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|e:\\web\\tourly\\tourly\\views\\home\\mybookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|solutionrelative:views\\home\\mybookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|e:\\web\\tourly\\tourly\\views\\home\\guide.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|solutionrelative:views\\home\\guide.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|e:\\web\\tourly\\tourly\\views\\home\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|solutionrelative:views\\home\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|e:\\web\\tourly\\tourly\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{865EC9FE-84DD-4C3B-8994-78EC92920DF4}|tourly.csproj|solutionrelative:wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\web\\tourly\\tourly\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\web\\tourly\\tourly\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T06:09:19.451Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Bookings.cshtml",
+              "DocumentMoniker": "E:\\web\\tourly\\tourly\\Views\\Home\\Bookings.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Bookings.cshtml",
+              "ToolTip": "E:\\web\\tourly\\tourly\\Views\\Home\\Bookings.cshtml",
+              "RelativeToolTip": "Views\\Home\\Bookings.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T08:00:08.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Guide.cshtml",
+              "DocumentMoniker": "E:\\web\\tourly\\tourly\\Views\\Home\\Guide.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Guide.cshtml",
+              "ToolTip": "E:\\web\\tourly\\tourly\\Views\\Home\\Guide.cshtml",
+              "RelativeToolTip": "Views\\Home\\Guide.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAmwEAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T06:24:12.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\web\\tourly\\tourly\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\web\\tourly\\tourly\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAIMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T04:44:30.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mybookings.cshtml",
+              "DocumentMoniker": "E:\\web\\tourly\\tourly\\Views\\Home\\Mybookings.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Mybookings.cshtml",
+              "ToolTip": "E:\\web\\tourly\\tourly\\Views\\Home\\Mybookings.cshtml",
+              "RelativeToolTip": "Views\\Home\\Mybookings.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T04:52:50.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "style.css",
+              "DocumentMoniker": "E:\\web\\tourly\\tourly\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
+              "ToolTip": "E:\\web\\tourly\\tourly\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "wwwroot\\css\\style.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-25T08:02:33.133Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

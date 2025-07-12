@@ -1,0 +1,73 @@
+﻿@model List<tourly.Models.BookingViewModel>
+<center>
+    <div class="w-[80%]">
+        <div class="w-full flex p-[10px] items-center justify-between">
+            <div class="flex items-center gap-[10px]">
+                <img class="rounded h-[100px] " src="/assets/logo.png" />
+            
+            </div>
+            <div class="flex items-center gap-[10px]">
+                <a asp-controller="Home" asp-action="Guide" class="text-blue text-sm">Dashboard</a>
+
+                <div class="flex items-center gap-[10px] bg-[#000000] p-[5px] rounded-full">
+                    <div class="p-[5px]">
+                        <p class="text-white">@ViewBag.userName</p>
+                    </div>
+                    <a asp-controller="Auth" asp-action="Signout" class="text-black bg-white p-[5px_10px] rounded-full text-sm">Sign out</a>
+                </div>
+            </div>
+        </div>
+        <div class="h-[25px]"></div>
+        <center>
+            <h1 class="text-xl">Booking lists</h1>
+        </center>
+        <div class="h-[25px]"></div>
+
+        <div class="p-[10px]">
+            <table class="w-full text-left">
+                <thead>
+                    <tr>
+                        <th class="p-[10px]">SN</th>
+                        <th class="p-[10px]">Name</th>
+                        <th class="p-[10px]">Email</th>
+                        <th class="p-[10px]">BookedDate</th>
+                        <th class="p-[10px]">Contact</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                            int index = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="p-[10px]">@index</td>
+                                <td class="p-[10px]">@item.UserName</td>
+                                <td class="p-[10px]">@item.UserEmail</td>
+                                <td class="p-[10px]">@item.BookingDate</td>
+                                <td class="p-[10px]"><a href="mailto:@item.UserEmail" class="p-[5px_10px]  outline outline-1 rounded-full">Contact via email</a></td>
+
+                            </tr>
+                            index=index+1;
+
+                        }
+                    }
+
+                    
+                </tbody>
+            </table>
+        </div>
+        <br /><br />
+        <footer>
+            <center>
+                <div class="">
+                    <img class="rounded h-[50px]" src="/assets/logo.png" />
+                    <p>Tourly</p>
+                    <br />
+                    <p class="text-sm">Copyright@Tourly | All Rights Reserved</p>
+                </div>
+            </center>
+        </footer>
+    </div>
+</center>

@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+@model List<tourly.Models.Package>
+
+<div class="p-[0px] ">
+
+    <div class="p-[10px_0] bg-[url(/assets/landing.jpg)] h-[80vh] bg-center bg-cover bg-no-repeat rounded-xl flex flex-col justify-between items-center">
+        <div class="w-full flex p-[10px] items-center justify-between text-white">
+            <a asp-action="Index" class="flex items-center gap-[10px]">
+                <img class="rounded h-[50px] w-[100px]" src="/assets/logo.png" />
+            </a>
+            <div class="flex items-center gap-[25px] text-3xl ">
+                <a class="hover:text-[#9320f7] hover:translate-y-[10px]" href="#">Home</a>
+                <a class="hover:text-[#9320f7] hover:translate-y-[10px]" href="#destination">Destinations</a>
+                <a class="hover:text-[#9320f7] hover:translate-y-[10px]" href="#team">Team</a>
+            </div>
+          
+
+            @{
+                if (ViewBag.authenticated)
+                {
+                    <div class="flex items-center gap-[10px]">
+                        <a asp-action="Mybookings">My bookings</a>
+                        <div class="flex items-center gap-[10px] bg-[#00000050] backdrop-blur p-[5px] rounded-full">
+
+                            <div class="p-[5px]">
+                                <p>@ViewBag.userName</p>
+                            </div>
+                            <a asp-controller="Auth" asp-action="Signout" class="text-black bg-white p-[5px_10px] rounded-full text-sm">Sign out</a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="flex items-center gap-[20px]">
+                        <a asp-controller="Auth" asp-action="Signup">Sign up</a>
+                        <a asp-controller="Auth" asp-action="Login" class="bg-black text-white p-[10px_20px] rounded-full text-sm">Log In</a>
+                    </div>
+                }
+            }
+            
+          
+        </div>
+        <div>
+            <h1 class="text-4xl text-white">Find awesome destinations, right in single search.</h1>
+            <br />
+            <center>
+                <div class="p-[8px] bg-[#00000040] rounded-full backdrop-blur max-w-[600px]">
+                    <form class="flex">
+                        <input class="bg-transparent flex-1 text-white outline-none border-none p-[10px]" type="text" placeholder="Search destinations" />
+                        <button class="bg-white p-[5px_20px] rounded-full text-sm" type="submit">Explore</button>
+                    </form>
+                </div>
+            </center>
+        </div>
+        <a class="p-[10px] text-white border border-1 border-[#ffffff] rounded-full">Explore more</a>
+    </div>
+    <div class="h-[25px]"></div>
+    <center>
+        <h1 id="destination" class="text-xl">Top Destinations</h1>
+    </center>
+    <div class="h-[25px]"></div>
+
+    <div class="flex flex-col gap-[25px]">
+        @if(Model!=null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+            {
+                <center>
+                    <div class="p-[8px] bg-[#fcd6b8] rounded-xl h-[300px] w-[80%] flex justify-between gap-[20px] hover:bg-[#00800070] hover:translate-y-[-10px]">
+                        <div class="flex flex-1 gap-[10px]">
+                            <div class="h-full flex-1">
+                                <img class="rounded-xl h-full" src="@item.Image" />
+                            </div>
+                            <div class="text-left flex-1">
+                                <h1 class="text-xl">@item.Destination</h1>
+                                <h1 class="text-xl">$@item.Price</h1>
+                                <span>@item.Date</span>
+                                <p class="p-[5px] w-fit outline outline-1 outline-[#00000050] rounded">@item.CreatorName</p>
+                                <br />
+                                <p class="text-sm">@item.Description</p>
+                            </div>
+                        </div>
+                        @{
+                            if (ViewBag.authenticated)
+                            {
+                                <div class="flex flex-col justify-end">
+                                    <form asp-action="NewBooking" method="post">
+                                        <input type="hidden" value="@ViewBag.UserId" name="UserId" />
+                                        <input type="hidden" value="@item.Id" name="PackageId" />
+
+                                        <button type="submit" class="p-[10px_20px] bg-[#000000] backdrop-blur text-white rounded-full text-sm">Book now</button>
+                                    </form>
+                                </div>
+                            }
+                        }
+                    </div>
+                </center>
+            }
+            }
+            
+
+    </div>
+
+    <div>
+        <div class="h-[25px]"></div>
+    <center>
+            <h1 id="team" class="text-xl">Teams</h1>
+    </center>
+        <div class="h-[25px]"></div>
+
+    <div class="flex items-center  justify-center gap-[50px] ">
+
+            <div class="p-[10px] outline outline-1 outline-[#00000050] rounded-xl hover:bg-[#00800070] hover:translate-y-[-10px]">
+                <center>
+                    <img class="rounded-xl" height="200px" width="200px" src="assets/bimal.jpg" />
+                    <h1>Bimal Prasad Bhusal</h1>
+                    <span>20028087</span>
+                </center>
+        </div>
+            <div class="p-[10px] outline outline-1 outline-[#00000050] rounded-xl hover:bg-[#00800070] hover:translate-y-[-10px]">
+                <center>
+                    <img class="rounded-xl" height="200px" width="200px" src="assets/ripson.jpg" />
+                    <h1>Ripson Shrestha</h1>
+                    <span>20028298</span>
+                </center>
+            </div><div class="p-[10px] outline outline-1 outline-[#00000050] rounded-xl hover:bg-[#00800070] hover:translate-y-[-10px]">
+                <center>
+                    <img class="rounded-xl" height="200px" width="200px" src="assets/anisha.jpg" />
+                    <h1>Anisha Shrestha</h1>
+                    <span>20020702</span>
+                </center>
+            </div>
+    </div>    
+</div>
+    <br /><br />
+    <footer>
+        <center>
+            <div class="">
+                <img class="rounded h-[50px]" src="/assets/logo.png" />
+                <p>Tourly</p>
+                <br />
+                <p class="text-sm">Copyright@Tourly | All Rights Reserved</p>
+            </div>
+        </center>
+    </footer>
+</div>

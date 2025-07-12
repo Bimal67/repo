@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Guide ~ Dashboard";
+}
+@model List<tourly.Models.Package>
+<center>
+    <div class="p-[10px] w-[80%]">
+    <div class="w-full flex p-[10px] items-center justify-between">
+        <div class="flex items-center gap-[10px]">
+            <img class="rounded h-[100px] " src="/assets/logo.png" />
+            
+        </div>
+
+        <div class="flex items-center gap-[10px] bg-[#000000] p-[5px] rounded-full">
+                <div class="p-[5px]">
+                    <p class="text-white">@ViewBag.userName</p>
+                </div>
+<a asp-controller="Auth" asp-action="Signout" class="text-black bg-white p-[5px_10px] rounded-full text-sm">Sign out</a>            </div>
+    </div>
+        <div class="h-[25px]"></div>
+
+    <div class="p-[10px] outline outline-1 outline-[#00000050] rounded-xl">
+            <form class="flex flex-col gap-[10px]" asp-action="Create" method="post" enctype="multipart/form-data">
+                <!-- Destination Input -->
+                <input class="p-[10px] outline-none text-xl" type="text" placeholder="Destination" name="Destination" required />
+
+                <!-- Image File Upload -->
+                <input class="p-[10px] outline-none" type="text" name="Image" placeholder="Image URL" required />
+
+                <!-- Price Input -->
+                <input class="p-[10px] outline-none" type="number" placeholder="Price" name="Price" required min="0" step="0.01" />
+
+                <!-- Date Input -->
+                <input class="p-[10px] outline-none" type="date" placeholder="Date" name="Date" required />
+
+                <!-- Description Textarea -->
+                <textarea class="p-[10px] outline-none" placeholder="Description about tour & destination." name="Description" required></textarea>
+
+                <!-- Hidden User ID (Creator) -->
+                <input type="hidden" value="@ViewBag.UserId" name="Creator" />
+                <input type="hidden" value="@ViewBag.UserName" name="CreatorName" />
+
+
+                <!-- Submit Button -->
+                <button class="p-[10px_20px] bg-blue-500 text-white rounded" type="submit">Post</button>
+            </form>
+
+    </div>
+
+     <div class="h-[25px]"></div>
+    <center>
+        <h1 class="text-xl">My Postings</h1>
+    </center>
+    @* Postings *@
+    <div class="h-[25px]"></div>
+
+      <div class="flex flex-col gap-[25px]">
+
+            @if(Model!=null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+
+
+                    <center>
+                        <div class="p-[8px] bg-[#fcd6b8] rounded-xl h-[300px] flex justify-between gap-[20px] hover:bg-[#00800070] hover:translate-y-[-10px]">
+                <div class="flex flex-1 gap-[10px]">
+                    <div class="h-full flex-1">
+                        <img class="rounded-xl h-full" src="@item.Image" />
+                    </div>
+                    <div class="text-left flex-1">
+                                    <h1 class="text-xl">@item.Destination</h1>
+                        <h1 class="text-xl">$@item.Price</h1>
+                        <span>@item.Date</span>
+                        <br />
+                        <p class="text-sm">@item.Description</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-end gap-[10px]">
+                    <div class="flex items-center gap-[10px]">
+                            <form asp-action="Delete" method="post">
+                                        <input type="hidden" value="@item.Id" name="PackageId" />
+                                        <button type="submit" class="p-[10px_20px] bg-red-600 backdrop-blur text-white rounded-full text-sm">Delete</button>
+                            </form>
+
+                                    <form asp-action="Bookings" method="get">
+                                        <input type="hidden" value="@item.Id" name="PackageId" />
+                                        <button type="submit" class="p-[10px_20px] bg-[#000000] backdrop-blur text-white rounded-full text-sm">View bookings</button>
+
+                            </form>
+                    </div>
+                 </div>
+            </div>
+        </center>}
+            }
+           
+
+    </div>
+        <br /><br />
+    <footer>
+        <center>
+            <div class="">
+                <img class="rounded h-[50px]" src="/assets/logo.png" />
+                <p>Tourly</p>
+                <br />
+                <p class="text-sm">Copyright@Tourly | All Rights Reserved</p>
+            </div>
+        </center>
+    </footer>
+</div>
+</center>

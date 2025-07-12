@@ -1,0 +1,50 @@
+﻿@model tourly.Models.User
+
+@{
+    ViewData["Title"] = "Authenticate~Login";
+}
+
+<div class="fixed inset-0 flex flex-col items-center justify-center">
+    <div class="p-[20px] rounded outline outline-1 outline-[#00000020] min-w-[500px] flex flex-col gap-[10px]">
+        <img class="rounded h-[50px] w-[50px]" src="/assets/logo.png" />
+        <h1 class="text-xl">Welcome back,</h1>
+        <p>Enter your credentials to continue.</p>
+
+        <!-- Login Form -->
+        <form class="flex flex-col gap-[10px]" method="post" asp-action="Login">
+            @Html.AntiForgeryToken()
+
+            <!-- Email Field -->
+            <label>E-mail</label>
+            <input class="p-[10px] rounded outline outline-1 outline-[#00000020]"
+                   type="email"
+                   placeholder="bimal@tourly.com"
+                   asp-for="Email" required />
+            <!-- Validation message for Email -->
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-red-500" })
+
+            <!-- Password Field -->
+            <label>Password</label>
+            <input class="p-[10px] rounded outline outline-1 outline-[#00000020]"
+                   type="password"
+                   placeholder="******"
+                   asp-for="Password" required />
+            <!-- Validation message for Password -->
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-red-500" })
+
+            <!-- Submit Button -->
+            <button class="p-[10px] bg-black text-white rounded" type="submit">
+                Authenticate
+            </button>
+
+            <!-- Display error message (if any) passed from the controller -->
+            @if (ViewData["ErrorMessage"] != null)
+            {
+                <div class="text-red-500 text-sm">@ViewData["ErrorMessage"]</div>
+            }
+        </form>
+
+        <!-- Link to Signup page -->
+        <p>Don't have an account? <a class="text-blue-500" asp-controller="Auth" asp-action="Signup">Create</a></p>
+    </div>
+</div>

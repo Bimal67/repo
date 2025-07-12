@@ -1,0 +1,50 @@
+﻿@model tourly.Models.User
+
+@{
+    ViewData["Title"] = "Authenticate~Signup";
+}
+
+<div class="fixed inset-0 flex flex-col items-center justify-center">
+    <div class="p-[20px] rounded outline outline-1 outline-[#00000020] min-w-[500px] flex flex-col gap-[10px]">
+        <img class="rounded h-[50px] w-[50px]" src="/assets/logo.png" />
+        <h1 class="text-xl">Getting started,</h1>
+        <p>Enter your data to continue.</p>
+        <form class="flex flex-col gap-[10px]" method="post" asp-action="Signup">
+            @Html.AntiForgeryToken()
+
+            <label>Full-name</label>
+            <input class="p-[10px] rounded outline outline-1 outline-[#00000020]"
+                   type="text"
+                   placeholder="Bimal Bhusal"
+                   asp-for="Name" />
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-red-500" })
+
+            <label>E-mail</label>
+            <input class="p-[10px] rounded outline outline-1 outline-[#00000020]"
+                   type="email"
+                   placeholder="bimal@tourly.com"
+                   asp-for="Email" />
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-red-500" })
+
+            <label>Password</label>
+            <input class="p-[10px] rounded outline outline-1 outline-[#00000020]"
+                   type="password"
+                   placeholder="******"
+                   asp-for="Password" />
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-red-500" })
+
+            <label>Account type</label>
+            <select class="p-[10px] rounded outline outline-1 outline-[#00000020]" asp-for="Type">
+                <option value="Tourist">Tourist</option>
+                <option value="Guide">Guide</option>
+            </select>
+            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-red-500" })
+
+            <button class="p-[10px] bg-black text-white rounded" type="submit">
+                Create an account
+            </button>
+
+            <p>Already have an account? <a class="text-blue-500" asp-controller="Auth" asp-action="Login">Login</a></p>
+        </form>
+    </div>
+</div>

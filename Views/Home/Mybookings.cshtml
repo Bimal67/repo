@@ -1,0 +1,94 @@
+﻿@model List<tourly.Models.MybookingModel>
+
+<div class="p-[10px]">
+
+    <div class="w-full flex p-[10px] items-center justify-between">
+        <div class="flex items-center gap-[10px]">
+            <img class="rounded h-[100px] ]" src="/assets/logo.png" />
+        
+        </div>
+
+
+        @{
+            if (ViewBag.authenticated)
+            {
+                <div class="flex items-center gap-[10px] ">
+                    <a asp-action="Index">Home</a>
+
+  <div class="flex items-center gap-[10px] bg-[#000000] text-white backdrop-blur p-[5px] rounded-full ">
+
+                        <div class="p-[5px]">
+                            <p>@ViewBag.userName</p>
+                        </div>
+                        <a asp-controller="Auth" asp-action="Signout" class="text-black bg-white p-[5px_10px] rounded-full text-sm">Sign out</a>
+                    </div>
+                </div>
+            }
+
+        }
+
+
+    </div>
+
+
+    @* bookings *@
+    <div class="h-[25px]"></div>
+    <center>
+        <h1 class="text-xl">My Bookings</h1>
+    </center>
+    @* Postings *@
+    <div class="h-[25px]"></div>
+
+      <div class="flex flex-col gap-[25px]">
+
+            @if(Model!=null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+
+
+                    <center>
+                    <div class="p-[8px] bg-[#fcd6b8] rounded-xl h-[300px] flex justify-between gap-[20px] hover:bg-[#00800070] hover:translate-y-[-10px]">
+                <div class="flex flex-1 gap-[10px]">
+                    <div class="h-full">
+                        <img class="rounded-xl h-full" src="@item.Package.Image" />
+                    </div>
+                    <div class="text-left">
+                                    <h1 class="text-xl">@item.Package.Destination</h1>
+                        <h1 class="text-xl">$@item.Package.Price</h1>
+                        <span>@item.Package.Date</span>
+                                <p class="p-[5px] w-fit outline outline-1 outline-[#00000050] rounded">@item.Package.CreatorName</p>
+
+                        <br />
+                        <p class="text-sm">@item.Package.Description</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-end gap-[10px]">
+                    <div class="flex items-center gap-[10px]">
+                            <form asp-action="Cancel" method="post">
+                                        <input type="hidden" value="@item.Booking.Id" name="BookingId" />
+                                        <button type="submit" class="p-[10px_20px] bg-red-600 backdrop-blur text-white rounded-full text-sm">Cancel</button>
+                            </form>
+
+                      
+                    </div>
+                 </div>
+            </div>
+        </center>}
+            }
+           
+
+    </div>
+    <br /><br />
+    <footer>
+        <center>
+            <div class="">
+                <img class="rounded h-[50px]" src="/assets/logo.png" />
+                <p>Tourly</p>
+                <br />
+                <p class="text-sm">Copyright@Tourly | All Rights Reserved</p>
+            </div>
+        </center>
+    </footer>
+
+</div>
